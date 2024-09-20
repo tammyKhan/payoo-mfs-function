@@ -17,6 +17,7 @@ if(pinNumber === 1234){
   const newBalance = balance + addMoney;
 
   console.log(newBalance);
+  document.getElementById('account-balance').innerText = newBalance;
 
 
 }else{
