@@ -9,23 +9,18 @@
 document.getElementById('btn-add-money').addEventListener('click', function(event){
   event.preventDefault();
 
-  const addMoney = document.getElementById('input-add-money').value;
-  const pinNumber = document.getElementById('input-pin-number').value;
-  console.log(addMoney, pinNumber);
+  const addMoney = getInputFieldValueById('input-add-money');
+  const pinNumber = getInputFieldValueById('input-pin-number');
 
-  if(pinNumber === '1234'){
-    const balance = document.getElementById('account-balance').innerText;
-    
-    const balanceNumber = parseFloat(balance);
-    const addMoneyNumber = parseFloat(addMoney);
+if(pinNumber === 1234){
+  const balance = getTextFieldValueById('account-balance');
+  const newBalance = balance + addMoney;
 
-    const newBalance = balanceNumber + addMoneyNumber;
+  console.log(newBalance);
 
-    console.log(newBalance);
 
-    document.getElementById('account-balance').innerText = newBalance;
+}else{
+  alert('Failed to add the money')
+}
 
-  }else{
-    alert('Failed to add money')
-  }
 })
